@@ -1,0 +1,17 @@
+
+@import "../../less/vars.import.less";
+@import "less/variables.import.less";
+
+@wb-font-path: ".";
+
+@import "less/path.import.less";
+//@import "less/core.import.less";
+
+[class^="@{wb-css-prefix}-"],
+[class*=" @{wb-css-prefix}-"] {
+  font-family: '@{wb-font-family}';
+
+  .make-icon();
+}
+
+@import "less/icons.import.less";

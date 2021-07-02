@@ -1,0 +1,24 @@
+
+<div class="after-run">
+	<div class="site-menubar-unfold">
+	<div ng-include="'client/templates/app-header.ng.html'"></div>
+<div ng-if="$root.currentUser">
+<div class="site-menubar" ng-include="'client/templates/app-menu.ng.html'">
+  
+</div>
+
+
+<div class="page" ui-view>
+ 
+</div>
+</div>
+
+
+<div ng-if="!$root.currentUser">
+  <h2 style="margin:0 auto;">Welcome to Mtalkies!</h2>
+</div>
+
+  
+
+ </div>
+</div>

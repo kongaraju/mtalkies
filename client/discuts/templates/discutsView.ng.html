@@ -1,0 +1,83 @@
+ <!-- Page Header -->
+  <div class="page-header">
+    <h1 class="page-title">Discussions</h1>
+  </div>
+  <!-- End Page Header -->
+
+  <!-- Page Content -->
+  <div class="page-content">
+
+    <!-- Panel -->
+    <div class="panel">
+      <!-- <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div> -->
+      <div class="panel-body">
+        <div>
+      	 <form class="comment-reply"  ng-submit="addDiscut(newDiscut); newDiscut='';">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="3" placeholder="Say something..." ng-model="newDiscut"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                    
+                  </div>
+          </form>
+        </div>
+        <div ng-init="init()">
+          <div class="comments" ng-repeat="disc in discuts track by disc._id"  bn-log-dom-creation="With">
+          <div class="comment media" >
+              <div class="media-left">
+                <a class="avatar avatar-lg" href="javascript:void(0)">
+                  <img src="{{disc.userObj.profile.picName ? '/.ProfilePics/'+ disc.userObj.profile.picName : '/portraits/7.jpg'}}" alt="..."> 
+                </a>
+              </div>
+              <div class="comment-body media-body">
+              
+                <a class="comment-author" href="/profile/{{disc.owner}}">{{disc.userObj.profile.firstName}}</a>
+                <div class="comment-meta">
+                  <span class="date">{{$root.fromNow(disc.createdAt)}}</span>
+
+                </div>
+                <div class="dropdown comment-more pull-right">
+                  <a href="javascript:void(0)" class=" dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-animation="scale-up" role="button">
+                    <span  class="icon md-more-vert"></span>
+                  </a>
+
+                  <ul class="dropdown-menu" role="menu">
+                    <li role="presentation">
+                      <a href="" role="menuitem" ng-click="remove(disc)">
+                      <i class="icon fa fa-delete" aria-hidden="true" ></i> Delete</a>
+                    </li>
+                   
+                  </ul>
+                </div>
+                <div class="comment-content">
+                  <p>{{disc.text}}</p>
+                </div>
+                <div class="comment-actions">
+
+                
+                  <a class="text-like icon glyphicon glyphicon-thumbs-up" ng-class="{'active':disc.likers.indexOf($root.currentUser._id) !== -1}" href="javascript:void(0)" role="button" ng-click="like(disc)"></a>
+                 <a class="text-like icon glyphicon glyphicon-thumbs-down" ng-class="{'active':disc.dislikers.indexOf($root.currentUser._id) !== -1}" href="javascript:void(0)" role="button" ng-click="dislike(disc)"></a>
+                  <a class="text-like icon wb-heart" ng-class="{'active':disc.favouriteTo.indexOf($root.currentUser._id) !== -1}" href="javascript:void(0)" role="button" ng-click="makeFavourite(disc)"></a>
+                  <a class="active" href="javascript:void(0)" role="button" ng-click="canReply=!canReply">Reply</a>
+                  <a class="active" href="javascript:void(0)" role="button" ng-click="loadComments=true">Comments</a>
+                </div>
+                <div ng-if="canReply">
+                  <div ng-include="'client/discuts/templates/inputView.ng.html'"></div>
+                </div>
+                <div ng-if="loadComments" ng-include="'client/discuts/templates/commentsView.ng.html'" ng-controller="DiscutsCtrl" ng-init="init(disc._id)">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary btn-block" ng-click="loadMore()">Load more...</button>
+        </div>
+      </div>
+    </div>
+    <!-- End Panel -->
+
+  </div>
+  <!-- End Page Content -->

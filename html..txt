@@ -1,0 +1,19 @@
+1. what are all the componets of sap's sd module?
+the important componets in sap sales & distribution module include
+master data
+basic functions
+sales (including foreign sales and sales support 
+shipping & Transportion 
+billing
+sales support
+information systems
+2. what are all the important organizational elements of sap sd?
+the important organizational elements in sap sales&distribution include:
+sales organization
+distribution channel
+division 
+sales area 
+sales group
+sales person
+
+

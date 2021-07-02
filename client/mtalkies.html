@@ -1,0 +1,41 @@
+<head>
+  <title>Mtalkies</title>
+  <base href="/">
+</head>
+
+<body ng-app="mtalkies">
+  <!-- <div ng-include="'client/templates/app-body.ng.html'"></div> -->
+  <div class="after-run">
+	  <div class="site-menubar-unfold">
+		  <div ng-include="'client/templates/app-header.ng.html'" ng-controller="HeaderCtrl"></div>
+			<div ng-if="$root.currentUser">
+				<div class="site-menubar" ng-include="'client/templates/app-menu.ng.html'">
+				  
+				</div>
+
+
+				<div class="page" ui-view>
+				 
+				</div>
+
+				<div class="" ng-include="'client/templates/app-communicator.ng.html'" ng-controller="CommunicatorCtrl">
+				  
+				</div>
+
+			</div>
+
+
+			<div ng-if="!$root.currentUser && !$root.singUp" ng-include="'client/templates/app-login.ng.html'" class="page-login-v2 layout-full page-dark" ng-controller="AuthCtrl">
+				
+			</div>
+
+			<div ng-if="!$root.currentUser && $root.singUp" ng-include="'client/templates/app-join.ng.html'" class="page-login-v2 layout-full page-dark" ng-controller="AuthCtrl">
+			  
+			</div>
+
+		  
+
+		 </div>
+	</div>
+</body>
+

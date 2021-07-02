@@ -1,0 +1,31 @@
+<div class="page animsition" >
+    <div class="page-login-main" style="float:right;width:500px;position:fixed;right:0px;top:50px;bottom:0px;padding:100px;">
+        <div class="brand visible-xs">
+          <img class="brand-img" src="/images/logo-blue@2x.png" alt="...">
+          <h3 class="brand-text font-size-40">Remark</h3>
+        </div>
+        <h3 class="font-size-24">Sign In</h3>
+        <p>Welcome to Mtalkies...</p>
+
+        <form >
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" name="email" value="rk@rk.com" placeholder="Email" ng-model="user">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password" value="944130" placeholder="Password" ng-model="pswd">
+          </div>
+          <div class="form-group clearfix">
+            <div class="checkbox-custom checkbox-inline checkbox-primary pull-left">
+              <input type="checkbox" id="remember" name="checkbox">
+              <label for="inputCheckbox">Remember me</label>
+            </div>
+            <a class="pull-right" href="forgot-password.html">Forgot password?</a>
+          </div>
+          <button type="button" class="btn btn-primary btn-block" ng-click="login(user,pswd);user='';pswd=''">Sign in</button>
+        </form>
+
+        <p>No account? <a  ng-click="$root.singUp= true;">Sign Up</a></p>
+      </div>
+</div>

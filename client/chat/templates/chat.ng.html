@@ -1,0 +1,54 @@
+	<div id="conversation" class="conversation active">
+  <div class="conversation-header">
+    <a class="conversation-more pull-right" href="javascript:void(0)">
+      <i class="icon wb-more-horizontal" aria-hidden="true"></i>
+    </a>
+    <a class="conversation-return pull-left" href="javascript:void(0)" data-toggle="close-chat" ng-click="switchView('list')">
+      <i class="icon wb-chevron-left" aria-hidden="true"></i>
+    </a>
+    <div class="conversation-title">{{chatUser.profile.firstName}}</div>
+  </div>
+  <div class="chats">
+    <div class="chat chat-left" ng-repeat="msg in room.messages">
+      <div class="chat-avatar" >
+        <a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="Edward Fletcher">
+          <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Edward Fletcher">
+        </a>
+      </div>
+      <div class="chat-body">
+        <div class="chat-content">
+          <p>
+           {{msg.text}}
+          </p>
+          <time class="chat-time" datetime="2015-06-01T08:35">{{$root.fromNow(msg.createdAt)}}</time>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="chat">
+      <div class="chat-avatar">
+        <a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="June Lane">
+          <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="June Lane">
+        </a>
+      </div>
+      <div class="chat-body">
+        <div class="chat-content">
+          <p>
+            Hello. What can I do for you?
+          </p>
+          <time class="chat-time" datetime="2015-06-01T08:30">8:30 am</time>
+        </div>
+      </div>
+    </div> -->
+  </div>
+  <div class="conversation-reply">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <a href="javascript: void(0)" class="btn btn-pure btn-default icon wb-plus"></a>
+      </span>
+      <input class="form-control" type="text" placeholder="Say something" ng-model="msg" ng-keyPress="sendMessage($event,msg)">
+      <span class="input-group-btn">
+        <a href="javascript: void(0)" class="btn btn-pure btn-default icon wb-image"></a>
+      </span>
+    </div>
+  </div>
+</div>

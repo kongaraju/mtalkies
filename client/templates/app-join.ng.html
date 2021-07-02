@@ -1,0 +1,32 @@
+<div class="page animsition" >
+    <div class="page-login-main" style="float:right;width:500px;position:fixed;right:0px;top:50px;bottom:0px;padding:100px;">
+        <div class="brand visible-xs">
+          <img class="brand-img" src="/images/logo-blue@2x.png" alt="...">
+          <h3 class="brand-text font-size-40">Remark</h3>
+        </div>
+        <h3 class="font-size-24">Sign Up</h3>
+        <p>Welcome to Mtalkies...</p>
+
+        <form >
+          <div class="form-group">
+            <label class="sr-only" for="inputFname">First Name</label>
+            <input type="text" class="form-control" id="inputFname" name="fname"  placeholder="First Name" ng-model="fname">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" name="email"  placeholder="Email" ng-model="user">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password"  placeholder="Password" ng-model="pswd">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword"> Confirm Password</label>
+            <input type="password" class="form-control" id="confirmPassword" name="cpassword"  placeholder="Password" ng-model="cpswd">
+          </div>
+          <button type="button" class="btn btn-primary btn-block" ng-click="join(fname, user,pswd, cpswd);user='';pswd='';cpswd=''">Sign up</button>
+        </form>
+
+        <p>Already have account? <a ng-click="$root.singUp=false;">Sign In</a></p>
+      </div>
+</div>

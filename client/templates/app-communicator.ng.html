@@ -1,0 +1,25 @@
+<div class="slidePanel slidePanel-right site-sidebar slidePanel-show" ng-show="show">
+	<div class="slidePanel-content site-sidebar-content">
+		<div  class="list-group" ng-show="view=='list'">
+			<a ng-repeat="user in users" class="list-group-item" href="javascript:void(0)" data-toggle="show-chat">
+	            <div class="media" ng-click="$parent.switchView('chat',user)">
+	              <div class="media-left">
+	                <div class="avatar avatar-sm {{getStatusClass(user)}}">
+	                  <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="...">
+	                  <i></i>
+	                </div>
+	              </div>
+	              <div class="media-body">
+	                <h4 class="media-heading">{{user.profile.firstName}}</h4>
+	                <small>{{user.profile.stutus}}</small>
+	              </div>
+	            </div>
+          	</a>
+		</div>
+		<div ng-show="view=='chat'" ng-include="'client/chat/templates/chat.ng.html'" ng-controller="ChatCtrl">
+
+	
+
+		</div>
+	</div>
+</div>

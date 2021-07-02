@@ -1,0 +1,120 @@
+ <!-- Page Header -->
+  <!-- <div class="page-header">
+    <h1 class="page-title">{{user.firstName}}</h1>
+  </div> -->
+  <!-- End Page Header -->
+
+  <!-- Page Content -->
+  <div class="page-content page-profile">
+<div class="row">
+
+<div class="col-md-3">
+<div class="widget widget-shadow text-center">
+            <div class="widget-header">
+              <div class="widget-header-content">
+                <a class="avatar avatar-lg" href="javascript:void(0)">
+                  <img src="/portraits/5.jpg" alt="...">
+                </a>
+                <div class="profile-user">{{user.firstName +" "+ user.lastName}}</div>
+                <div class="profile-job">{{user.title}}</div>
+                <p>{{user.bio}}</p>
+                <div class="profile-social">
+                  <a class="icon bd-twitter" href="javascript:void(0)"></a>
+                  <a class="icon bd-facebook" href="javascript:void(0)"></a>
+                  <a class="icon bd-dribbble" href="javascript:void(0)"></a>
+                  <a class="icon bd-github" href="javascript:void(0)"></a>
+                </div>
+                <input type="file" ng-show="isCurrentUser" class="btn btn-primary" ng-model='fileInput' onchange="angular.element(this).scope().changeProfilePic(this)">
+                <button type="button" class="btn btn-primary" ng-click="addToFollowing(user)" ng-hide="isCurrentUser" disabled="isFollowing">Follow</button>
+              </div>
+            </div>
+            <div class="widget-footer">
+              <div class="row no-space">
+                <div class="col-xs-6">
+                  <strong class="profile-stat-count">{{user.followers.length}}</strong>
+                  <span>Follower</span>
+                </div>
+                <div class="col-xs-6">
+                  <strong class="profile-stat-count">{{user.following.length}}</strong>
+                  <span>Following</span>
+                </div>
+               <!--  <div class="col-xs-4">
+                  <strong class="profile-stat-count">2000</strong>
+                  <span>Tweets</span>
+                </div> -->
+              </div>
+            </div>
+          </div>
+</div>
+<div class="col-md-9">
+    <!-- Panel -->
+    <div class="panel">
+      <!-- <div class="panel-heading">
+        <h3 class="panel-title"></h3>
+      </div> -->
+      <div class="panel-body">
+        <form autocomplete="off" ng-submit="saveProfile(user)">
+                    <div class="form-group row">
+                      <div class="col-sm-6">
+                        <label class="control-label" for="inputBasicFirstName">First Name</label>
+                        <input type="text" class="form-control" id="inputBasicFirstName" name="inputFirstName" placeholder="First Name" autocomplete="off" ng-model="user.firstName">
+                      </div>
+                      <div class="col-sm-6">
+                        <label class="control-label" for="inputBasicLastName">Last Name</label>
+                        <input type="text" class="form-control" id="inputBasicLastName" name="inputLastName" placeholder="Last Name" autocomplete="off" ng-model="user.lastName">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Gender</label>
+                      <div>
+                        <div class="radio-custom radio-default radio-inline">
+                          <input type="radio" id="inputBasicMale" name="inputGender" value="M" ng-model="user.gender">
+                          <label for="inputBasicMale">Male</label>
+                        </div>
+                        <div class="radio-custom radio-default radio-inline">
+                          <input type="radio" id="inputBasicFemale" name="inputGender" value="F" ng-model="user.gender">
+                          <label for="inputBasicFemale">Female</label>
+                        </div>
+                      </div>
+                    </div> 
+                    <div class="form-group">
+                      <label class="control-label" for="inputTitle">Title</label>
+                      <input type="text" class="form-control" id="inputTitle" name="inputTitle" placeholder="Title" autocomplete="off" ng-model="user.title">
+                    </div>
+             
+                    <div class="form-group">
+                      <label class="control-label" for="inputBio">About me</label>
+                      <textarea type="text" class="form-control" id="inputBio" name="inputBio" placeholder="Something about me..." autocomplete="off" ng-model="user.bio" rows=2 ></textarea>
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label" for="inputBasicEmail">Email Address</label>
+                      <input type="email" class="form-control" id="inputBasicEmail" name="inputEmail" placeholder="Email Address" autocomplete="off" ng-model="user.emailId">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label" for="inputGoogleLink">Google Plus</label>
+                      <input type="email" class="form-control" id="inputGoogleLink" name="inputGoogle" placeholder="Google Profile Link..." autocomplete="off" ng-model="user.googleProfile">
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label" for="inputFbLink">Facebook</label>
+                      <input type="email" class="form-control" id="inputFbLink" name="inputFacebook" placeholder="facebook profile.." autocomplete="off" ng-model="user.fbProfile">
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label" for="inputTwitterLink">Twitter</label>
+                      <input type="email" class="form-control" id="inputTwitterLink" name="inputTwitter" placeholder="Twitter Address" autocomplete="off" ng-model="user.twitterProfile">
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label" for="inputPintrestLink">Pinterest</label>
+                      <input type="email" class="form-control" id="inputPintrestLink" name="inputPintrest" placeholder="pinterest.." autocomplete="off" ng-model="user.pinterestProfile">
+                    </div>
+                    
+                    <div class="form-group" ng-if='isCurrentUser'>
+                      <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                  </form>
+      </div>
+    </div>
+    <!-- End Panel -->
+</div>
+</div>
+  </div>
+  <!-- End Page Content -->
